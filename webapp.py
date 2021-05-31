@@ -23,8 +23,8 @@ def main():
     collection = db['DSWclassdb']
     
 posts = db.posts #2. insert additional document using insert_one()
-    post_id = posts.insert_one(post).inserted_id
-    post_id 
+post_id = posts.insert_one(post).inserted_id
+post_id 
 
 
 posts.count_documents({}) #3 print the number of documents in the collection
