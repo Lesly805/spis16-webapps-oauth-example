@@ -1,4 +1,6 @@
-
+Flask-PyMongo
+pymongo
+dnspython
 itsdangerous
 Jinja2
 MarkupSafe
