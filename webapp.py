@@ -22,13 +22,22 @@ def main():
     db = client[db_name]
     collection = db['DSWclassdb']
     
-    posts = db.posts #2 insert 1 document
-post_id = posts.insert_one(post).inserted_id
-post_id
-ObjectId('60b02a42ec8982234fc4ab56')
+posts = db.posts #2. insert additional document using insert_one()
+    post_id = posts.insert_one(post).inserted_id
+    post_id 
 
-posts.count_documents({})
 
+posts.count_documents({}) #3 print the number of documents in the collection
+
+
+pprint.pprint(posts.find_one())#4. print the first document in the collection
+
+
+for post in posts.find():
+    pprint.pprint(post)#5. print all documents in the collection
+
+for post in posts.find({"name": "Daisy"}):
+   pprint.pprint(post)##6. print all documents with a particular value for some attribute
 
 
 app.debug = False #Change this to False for production
