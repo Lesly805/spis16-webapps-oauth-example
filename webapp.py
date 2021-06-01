@@ -23,7 +23,7 @@ def main():
     collection = db['DSWclassdb']
     
 posts = db.posts #2. insert additional document using insert_one()
-post_id = posts.insert_one(post).inserted_id
+post_id =  posts.insert_one(post).inserted_id
 post_id 
 
 
@@ -37,7 +37,7 @@ for post in posts.find():
     pprint.pprint(post)#5. print all documents in the collection
 
 for post in posts.find({"name": "Daisy"}):
-   pprint.pprint(post)##6. print all documents with a particular value for some attribute
+    pprint.pprint(post)##6. print all documents with a particular value for some attribute
 
 
 app.debug = False #Change this to False for production
