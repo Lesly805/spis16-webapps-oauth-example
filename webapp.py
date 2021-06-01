@@ -17,27 +17,27 @@ app = Flask(__name__)
 def main():
     connection_string = os.environ["MONGO_CONNECTION_STRING"]
     db_name = os.environ["MONGO_DBNAME"]
-   
+    
     client = pymongo.MongoClient(connection_string)
-    db = client['DSWdb']
+    db = client[db_name]
     collection = db['DSWclassdb']
-   
-colection = db.collection #2. insert additional document using insert_one()
-collection_id = collection.insert_one(collection).inserted_id
-collection_id
+
+#2. insert additional document using insert_one()
+    collection_id = collection.insert_one(collection).inserted_id
+    collection_id
 
 
-posts.count_documents({}) #3 print the number of documents in the collection
+    collection.count_documents({}) #3 print the number of documents in the collection
 
 
-pprint.pprint(posts.find_one())#4. print the first document in the collection
+    pprint.pprint(collection.find_one())#4. print the first document in the collection
 
 
-for post in posts.find():
-    pprint.pprint(post)#5. print all documents in the collection
+    for post in collection.find():
+        pprint.pprint(post)#5. print all documents in the collection
 
-for post in posts.find({"name": "Daisy"}):
-   pprint.pprint(post)##6. print all documents with a particular value for some attribute
+    for post in collection.find({"name": "Daisy"}):
+        pprint.pprint(post)##6. print all documents with a particular value for some attribute
 
 
 app.debug = False #Change this to False for production
