@@ -17,14 +17,14 @@ app = Flask(__name__)
 def main():
     connection_string = os.environ["MONGO_CONNECTION_STRING"]
     db_name = os.environ["MONGO_DBNAME"]
-    
+   
     client = pymongo.MongoClient(connection_string)
-    db = client[db_name]
+    db = client['DSWdb']
     collection = db['DSWclassdb']
-    
-posts = db.posts #2. insert additional document using insert_one()
-post_id =  posts.insert_one(post).inserted_id
-post_id 
+   
+colection = db.collection #2. insert additional document using insert_one()
+collection_id = collection.insert_one(collection).inserted_id
+collection_id
 
 
 posts.count_documents({}) #3 print the number of documents in the collection
@@ -37,7 +37,7 @@ for post in posts.find():
     pprint.pprint(post)#5. print all documents in the collection
 
 for post in posts.find({"name": "Daisy"}):
-    pprint.pprint(post)##6. print all documents with a particular value for some attribute
+   pprint.pprint(post)##6. print all documents with a particular value for some attribute
 
 
 app.debug = False #Change this to False for production
@@ -62,7 +62,7 @@ github = oauth.remote_app(
 
 
 #context processors run before templates are rendered and add variable(s) to the template's context
-#context processors must return a dictionary 
+#context processors must return a dictionary
 #this context processor adds the variable logged_in to the conext for all templates
 @app.context_processor
 def inject_logged_in():
@@ -74,7 +74,7 @@ def home():
 
 #redirect to GitHub's OAuth page and confirm callback URL
 @app.route('/login')
-def login():   
+def login():  
     return github.authorize(callback=url_for('authorized', _external=True, _scheme='https')) #callback URL must match the pre-configured callback URL
 
 @app.route('/logout')
