@@ -111,7 +111,7 @@ def renderPage1():
 
 @app.route('/page2',methods=['GET','POST'])
 def renderPage2():
-    session["PaintingAnswer1"]=request.form['PaintingAnswer1']
+    session["PaintingAnswer2"]=request.form['PaintingAnswer2']
     return render_template('page2.html')
 
 #the tokengetter is automatically called to check who is logged in.
