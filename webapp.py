@@ -13,18 +13,18 @@ import pprint
 
 app = Flask(__name__)
 
-
-#def main():
+"""
+def main():
     #connection_string = os.environ["MONGO_CONNECTION_STRING"]
     #db_name = os.environ["MONGO_DBNAME"]
-    
-    #client = pymongo.MongoClient(connection_string)
-    #db = client[db_name]
-    #collection = db['DSWclassdb']
+
+    client = pymongo.MongoClient(connection_string)
+    db = client[db_name]
+    collection = db['DSWclassdb']
 
 #2. insert additional document using insert_one()
-collection_id = collection.insert_one(collection).inserted_id
-collection_id
+    collection_id = collection.insert_one(collection).inserted_id
+    collection_id
 
 
     collection.count_documents({}) #3 print the number of documents in the collection
@@ -39,8 +39,8 @@ collection_id
     for post in collection.find({"name": "Daisy"}):
         pprint.pprint(post)##6. print all documents with a particular value for some attribute
 
-
-app.debug = False #Change this to False for production
+"""
+#Change this to False for production
 #os.environ['OAUTHLIB_INSECURE_TRANSPORT'] = '1' #Remove once done debugging
 
 app.secret_key = os.environ['SECRET_KEY'] #used to sign session cookies
