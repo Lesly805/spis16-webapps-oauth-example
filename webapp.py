@@ -109,9 +109,8 @@ def renderPage1():
         user_data_pprint = '';
     return render_template('page1.html',dump_user_data=user_data_pprint)
 
-@app.route('/page2',methods=['GET','POST'])
+@app.route('/page2')
 def renderPage2():
-    session["answer"]=request.form['answer']
     return render_template('page2.html')
 
 #the tokengetter is automatically called to check who is logged in.
