@@ -3,11 +3,10 @@
 {% block title %}page2{% endblock %}
 
 {% block content %}
-  <h1>This is Page 2</h1>
-
-<form action={{ url_for("renderPage2") }} method="POST">
+ <h1>This is Page 2</h1>
+ <form action={{ url_for("renderPage1") }} method="POST">
   Artist:<br>
-  <input type="text" name="PaintingAnswer1">
+  <input type="text" name="answer">
   <input type="submit" value="Submit">
  </form> 
 {% endblock %}
