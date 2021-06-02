@@ -14,13 +14,13 @@ import pprint
 app = Flask(__name__)
 
 
-def main():
-    connection_string = os.environ["MONGO_CONNECTION_STRING"]
-    db_name = os.environ["MONGO_DBNAME"]
+#def main():
+    #connection_string = os.environ["MONGO_CONNECTION_STRING"]
+    #db_name = os.environ["MONGO_DBNAME"]
     
-    client = pymongo.MongoClient(connection_string)
-    db = client[db_name]
-    collection = db['DSWclassdb']
+    #client = pymongo.MongoClient(connection_string)
+    #db = client[db_name]
+    #collection = db['DSWclassdb']
 
 #2. insert additional document using insert_one()
     collection_id = collection.insert_one(collection).inserted_id
