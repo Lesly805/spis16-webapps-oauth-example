@@ -13,7 +13,7 @@ import pprint
 
 app = Flask(__name__)
 
-"""
+
 def main():
     connection_string = os.environ["MONGO_CONNECTION_STRING"]
     db_name = os.environ["MONGO_DBNAME"]
@@ -39,7 +39,6 @@ def main():
     for post in collection.find({"name": "Daisy"}):
         pprint.pprint(post)##6. print all documents with a particular value for some attribute
 
-"""
 #Change this to False for production
 #os.environ['OAUTHLIB_INSECURE_TRANSPORT'] = '1' #Remove once done debugging
 
