@@ -23,8 +23,8 @@ app = Flask(__name__)
     #collection = db['DSWclassdb']
 
 #2. insert additional document using insert_one()
-    collection_id = collection.insert_one(collection).inserted_id
-    collection_id
+collection_id = collection.insert_one(collection).inserted_id
+collection_id
 
 
     collection.count_documents({}) #3 print the number of documents in the collection
