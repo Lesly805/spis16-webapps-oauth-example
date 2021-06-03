@@ -112,7 +112,15 @@ def renderPage1():
 @app.route('/page2',methods=['GET','POST'])
 def renderPage2():
     session["answer"]=request.form['answer']
+def data():
+    doc={"name": 'answer', "birthday":'answer2'}
+    #2 insert additional document using insert_one()
+    collection_id = collection.insert_one(collection).inserted_id
+    collection_id
+
+    
     return render_template('page2.html')
+
 
 #the tokengetter is automatically called to check who is logged in.
 @github.tokengetter
