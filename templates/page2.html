@@ -5,8 +5,12 @@
  {% block content %}
  <h1>This is Page 2</h1>
  <form action={{ url_for("/page2") }} method="POST">
-  Artist:<br>
+  name:<br>
+  <input type="text" name="answer">
+  <br>
+  birthdy:<br>
   <input type="text" name="answer">
   <input type="submit" value="Submit">
-</form> 
+ </form> 
+
 {% endblock %}
