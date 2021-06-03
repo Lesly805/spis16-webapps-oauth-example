@@ -113,8 +113,8 @@ def renderPage1():
 def renderPage2():
     session["answer"]=request.form['answer']
 def data():
+    
     doc={"name": 'answer', "birthday":'answer2'}
-    #2 insert additional document using insert_one()
     collection_id = collection.insert_one(collection).inserted_id
     collection_id
 
